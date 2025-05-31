@@ -1,0 +1,51 @@
+<!-- turn on laravel server -->
+php artisan serve 
+
+<!-- create a middleware -->
+php artisan make:middleware middleware_Name
+
+<!-- create a basic controller class -->
+php artisan make:controller controllerName 
+
+<!-- create a single action controller -->
+php artisan make:controller controller_name --invokable
+
+<!-- create a controller class with resource methods -->
+php artisan make:controller controller_name --resource
+
+<!-- create a component -->
+php artisan make:component component_name
+
+<!-- create your migration -->
+php artisan make:migration create_tableName_table
+
+<!-- create your migration with name and table -->
+php artisan make:migration create_tableName_table --create=tableName
+
+<!-- modify an existing table in migration -->
+php artisan make:migration add_columnName_to_tableName_table --table=tableName
+
+<!-- Rolls back the last batch of migrations.-->
+php artisan migration:rollback 
+
+<!-- Rolls back all migrations. -->
+php artisan migration:reset
+
+<!-- Rolls back and re-runs all migrations. -->
+php artisan migrate:refresh
+
+<!-- Drops all tables and runs all migrations from scratch. -->
+php artisan migrate:fresh
+
+<!-- create a seeder -->
+php artisan make:seeder seeder_name 
+
+<!-- run the seeder -->
+php artisan db:seed 
+
+<!-- create a factory -->
+php artisan make:factory factroyName --model=model_name
+
+<!--  Refresh & Seed All Together -->
+php artisan migrate:fresh --seed
+

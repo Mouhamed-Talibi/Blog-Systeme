@@ -4,6 +4,7 @@
 
     use App\Models\Student;
     use Illuminate\Http\Request;
+    use Illuminate\Support\Facades\Cache;
     use Illuminate\Support\Facades\DB;
 
     class StudentsController extends Controller
@@ -13,9 +14,10 @@
          */
         public function index()
         {
-            // get all students 
-            $students = DB::table('students')->orderBy('firstName', 'DESC')->get(); // query Builder
-            $students = Student::orderBy('firstName', 'DESC')->get();
+            // cache students
+            $students = Cache::remember('students', 300, function() {
+                return Student::orderBy('firstName', 'DESC')->get();
+            });
             return view('students.index', compact('students'));
         }
 

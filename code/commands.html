@@ -49,3 +49,26 @@ php artisan make:factory factroyName --model=model_name
 <!--  Refresh & Seed All Together -->
 php artisan migrate:fresh --seed
 
+<!-- create a middlware -->
+php artisan make:middleware middleware_name 
+
+<!-- install breeze authtification -->
+php artisan breeze:install
+
+<!-- create session table -->
+php artisan session:table 
+
+<!-- clear all cache -->
+php artisan cache:clear
+
+<!-- cache config files -->
+php artisan config:cache
+
+<!-- cache routes -->
+php artisan route:cache
+
+<!-- edit the content of email verification message -->
+php artisan vendor:publish --tag=laravel-notifications
+
+<!-- Generate a policy -->
+php artisan make:policy PostPolicy --model=Student
